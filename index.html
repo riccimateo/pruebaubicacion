@@ -1,5 +1,22 @@
 <html>
 <body>
 <p>Hola :)</p>
+  <p id="latitude">Latitud:</p>
+  <p id="longitude">Longitud:</p>
 </body>
 </html>
+
+
+
+let latText = document.getElementById("latitude");
+let longText = document.getElementById("longitude");
+
+ 
+  navigator.geolocation.getCurrentPosition((position) => {
+    let lat = position.coords.latitude;
+    let long = position.coords.longitude;
+
+    latText.innerText = lat.toFixed(2);
+    longText.innerText = long.toFixed(2);
+ 
+});
